@@ -1,0 +1,220 @@
+@import url('https://fonts.googleapis.com/css?family=Varela+Round');
+
+body {
+    font-family: "Varela Round", sans-serif;
+    overflow: hidden;
+}
+
+html, body, main {
+    margin: 0;
+    height: 100%;
+}
+
+html {
+    background-color: #251818;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+h1 {
+    text-transform: uppercase;
+    font-size: 6vw;
+    color: #888;
+    text-shadow:
+        0 1px 1px #fff,
+        0 1px 1px #fff,
+        0 1px 1px #fff,
+        0 1px 1px #fff;
+}
+
+p{
+    color: #ad553f;
+    font-size: 40px;
+}
+
+.balloons {
+    text-align: center;
+}
+
+.balloon {
+    display: inline-block;
+    position: relative;
+    width: 10vw;
+    height: 14vw;
+    margin: 1vw;
+    line-height: 14vw;
+    text-align: center;
+    border-top-left-radius: 5vw 6vw;
+    border-top-right-radius: 5vw 6vw;
+    border-bottom-left-radius: 5vw 8vw;
+    border-bottom-right-radius: 5vw 8vw;
+    -webkit-animation: balloon-lift 10s linear infinite;
+    animation: balloon-lift 10s linear infinite;
+}
+
+.balloon span {
+    font-size: 3vw;
+    color: rgba(255, 255, 255, 0.65);
+}
+
+.balloon::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 2.5vw;
+    left: 2vw;
+    width: 2vw;
+    height: 6vw;
+    background-color: #fff;
+    border-radius: 100%;
+    filter: blur(1.2vw);
+}
+
+.balloon::after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 4vw;
+    right: 2vw;
+    width: 1.2vw;
+    height: 4.5vw;
+    background-color: #fff;
+    border-radius: 100%;
+    filter: blur(1vw);
+}
+
+.string {
+    position: absolute;
+    left: 50%;
+    top: 100%;
+}
+
+.string::before {
+    content: "";
+    display: block;
+    position: absolute;
+    left: -1px;
+    width: 3vw;
+    height: 30vw;
+    border-left: 2px solid #ccc;
+    border-bottom: 3px solid #ccc;
+    border-radius: 0 0 0 100%;
+    transform-origin: 0 0;
+    -webkit-animation: string-swing 5s linear infinite;
+    animation: string-swing 5s linear infinite;
+}
+
+.string::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    margin-top: -0.7vw;
+    margin-left: -0.8vw;
+    border: 0.7vw solid transparent;
+}
+
+@keyframes balloon-lift {
+    0% {
+        transform: translateY(100vh);
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100vh);
+        opacity: 0;
+    }
+}
+
+@keyframes string-swing {
+    0% {
+        transform: scaleX(-1);
+    }
+    50% {
+        transform: scaleX(1);
+    }
+    100% {
+        transform: scaleX(-1);
+    }
+}
+
+/* Balloon styles */
+.balloon:nth-child(1) {
+    background-color: #f44336;
+    background-image: linear-gradient(to bottom, transparent 50%, rgba(229, 51, 47, 0.7) 30%);
+    box-shadow:
+        inset 0 0.8vw 3vw rgba(255, 255, 255, 0.8),
+        2vw 5vw 3vw rgba(229, 51, 47, 0.2),
+        2vw 5vw 10vw rgba(229, 51, 47, 0.6);
+    .string::after {
+        border-bottom-color: rgba(204, 41, 38, 0.9);
+    }
+}
+
+.balloon:nth-child(5) {
+    background-color: #E91E63;
+    background-image: linear-gradient(to bottom, transparent 50%, rgba(233, 30, 99, 0.7) 30%);
+    box-shadow:
+        inset 0 0.8vw 3vw rgba(255, 255, 255, 0.8),
+        2vw 5vw 3vw rgba(233, 30, 99, 0.2),
+        2vw 5vw 10vw rgba(233, 30, 99, 0.6);
+    .string::after {
+        border-bottom-color: rgba(233, 30, 99, 0.9);
+    }
+}
+
+.balloon:nth-child(2) {
+    background-color: #9C27B0;
+    background-image: linear-gradient(to bottom, transparent 50%, rgba(156, 39, 176, 0.7) 30%);
+    box-shadow:
+        inset 0 0.8vw 3vw rgba(255, 255, 255, 0.8),
+        2vw 5vw 3vw rgba(156, 39, 176, 0.2),
+        2vw 5vw 10vw rgba(156, 39, 176, 0.6);
+    .string::after {
+        border-bottom-color: rgba(133, 31, 144, 0.9);
+    }
+}
+
+.balloon:nth-child(6) {
+    background-color: #3F51B5;
+    background-image: linear-gradient(to bottom, transparent 50%, rgba(63, 81, 181, 0.7) 30%);
+    box-shadow:
+        inset 0 0.8vw 3vw rgba(255, 255, 255, 0.8),
+        2vw 5vw 3vw rgba(63, 81, 181, 0.2),
+        2vw 5vw 10vw rgba(63, 81, 181, 0.6);
+    .string::after {
+        border-bottom-color: rgba(51, 66, 154, 0.9);
+    }
+}
+
+.balloon:nth-child(4) {
+    background-color: #4CAF50;
+    background-image: linear-gradient(to bottom, transparent 50%, rgba(76, 175, 80, 0.7) 30%);
+    box-shadow:
+        inset 0 0.8vw 3vw rgba(255, 255, 255, 0.8),
+        2vw 5vw 3vw rgba(76, 175, 80, 0.2),
+        2vw 5vw 10vw rgba(76, 175, 80, 0.6);
+    .string::after {
+        border-bottom-color: rgba(67, 160, 71, 0.9);
+    }
+}
+
+.balloon:nth-child(3) {
+    background-color: #FF9800;
+    background-image: linear-gradient(to bottom, transparent 50%, rgba(255, 152, 0, 0.7) 30%);
+    box-shadow:
+        inset 0 0.8vw 3vw rgba(255, 255, 255, 0.8),
+        2vw 5vw 3vw rgba(255, 152, 0, 0.2),
+        2vw 5vw 10vw rgba(255, 152, 0, 0.6);
+    .string::after {
+        border
